@@ -1,0 +1,11 @@
+spring:
+  config:
+    import: "optional:configserver:http://config-service:8088"
+    activate:
+      on-profile: qa
+---
+spring:
+  application:
+    name: order-book-service
+  config:
+    import: "optional:configserver:http://localhost:8088"
