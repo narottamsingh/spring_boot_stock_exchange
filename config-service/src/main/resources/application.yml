@@ -5,12 +5,12 @@ spring:
     active: native
     
 management:
-  endpoint:
-    prometheus:
-      enabled: true
   endpoints:
-    web:
-      exposure:
-        include: '*'
-
-     
+     web:
+       exposure: 
+         include: beans,env,health,info,metrics,mappings,prometheus
+  endpoint:
+   health:
+     show-details: always
+     probes:
+        enabled: true     

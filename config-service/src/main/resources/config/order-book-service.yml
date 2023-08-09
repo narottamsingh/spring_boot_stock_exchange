@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 8092
 
 eureka:
   client:
@@ -19,6 +19,12 @@ spring:
       enabled: always
 
 management:
-  tracing:
-    sampling:
-      probability: 1.0
+  endpoints:
+     web:
+       exposure: 
+         include: beans,env,health,info,metrics,mappings,prometheus
+  endpoint:
+   health:
+     show-details: always
+     probes:
+        enabled: true
